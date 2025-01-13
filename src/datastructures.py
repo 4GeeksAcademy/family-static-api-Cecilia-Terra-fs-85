@@ -15,9 +15,21 @@ class FamilyStructure:
 
         # example list of members
         self._members = [
-            {"lucky_number":[7 ,13, 22], "first_name":"Jhon", "age":33, "last_name":self.last_name, "id":self._generate_id()},
-            {"lucky_number":[10, 14, 3], "first_name":"Jane", "age":35, "last_name":self.last_name, "id":self._generate_id()}, 
-            {"lucky_number":[1], "first_name":"Jimmy", "age":5, "last_name":self.last_name, "id":self._generate_id()},
+            {"lucky_number":[7 ,13, 22], 
+            "first_name":"Jhon", 
+            "age":33, 
+            "last_name":self.last_name, 
+            "id":self._generate_id()},
+            {"lucky_number":[10, 14, 3], 
+            "first_name":"Jane", 
+            "age":35, 
+            "last_name":self.last_name, 
+            "id":self._generate_id()}, 
+            {"lucky_number":[1], 
+            "first_name":"Jimmy", 
+            "age":5, 
+            "last_name":self.last_name, 
+            "id":self._generate_id()},
             ]                            
                         
 
@@ -29,9 +41,11 @@ class FamilyStructure:
 
     def add_member(self, member): #si id no esta en members member+last name, asignarle una id y el apellido a sel._member append(agrego) el nuevo memberS
         if "id" not in member: 
-            member["id"] = self._generate_id
+            member["id"] = self._generate_id()
         member["last_name"] = self.last_name
         self._members.append(member)
+        return True
+        
         
 
     def delete_member(self, id):
